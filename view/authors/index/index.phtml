@@ -1,0 +1,92 @@
+<section id="banner">
+   <div class="banner-bg">
+      <?php echo $this->MelisTag($this->idPage, "banner-img", 'media', '<img src="/Authors/assets/img/banner-bg.jpg" alt="Banner Image"/>'); ?>
+   </div>
+   <div class="container">
+      <div class="wrapper">
+         <div class="row">
+         <div class="col-lg-5 col-md-5">
+            <div class="img-cont">
+               <?php echo $this->MelisTag($this->idPage, "book-img", 'media', '<img src="/Authors/assets/img/banner-img.png" alt="book Image" />'); ?>
+            </div>
+         </div>
+         <div class="col-lg-7 col-md-7 text-center">
+            <div class="text-cont">
+               <h1><?php echo $this->MelisTag($this->idPage, "title-h1", 'html', 'Quest of the Bloodline'); ?>
+                  <span><?php echo $this->MelisTag($this->idPage, "author-name", 'html', 'by Rose Ethridge'); ?></span>
+               </h1>
+               <h2>
+                  <?php echo $this->MelisTag($this->idPage, "subtitle", 'html', ' Quest of the Bloodline vampire fantasy series takes you to a world hidden from humans.'); ?>
+               </h2>
+                  <?php echo $this->MelisTag($this->idPage, "buy-btn", 'html', '<a href="https://www.amazon.com" rel="noopener noreferrer">Order The Book</a>') ?>
+            </div>
+         </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section id="main">
+   <div class="container">
+      <div class="wrapper">
+         <div class="row">
+         <div class="col-lg-6">
+            <div class="text-cont">
+               <h2><span><img src="/Authors/assets/img/book-before.png" alt="">About the Book</h2>
+               <?php echo $this->MelisTag($this->idPage, "about-book-description", 'textarea', "
+                  <p>Quest of the Bloodline vampire fantasy series takes you to a world hidden from humans. A world of dark hierarchies and long-slumbering truths. But no secrets can be kept forever.</p>
+                  <p>Bronwyn Nina Nightshade knows that she's different from everyone else. She blushes, her hair's red and wild, her freckles show, and she's the slowest among her kind. She clings to the only thing that makes her feel like she still belongs: she's a vampire, just like everyone else. Right?</p>
+                  <p>On the dawn of her seventeenth birthday, the day of her Trial, she gets a chance to prove that. She is about to fulfill a task every vampire teen should undergo as a rite of passage. To take the challenge means she needs to see it through or be banished forever.</p>
+                  <p>Bronwyn receives unexpected help from Alexandre Petrovic, the most handsome vampire in Holloway Boarding School. To make things more exciting, she finds a mysterious note that might lead her to discover her unknown past, or worse . . . face death at the hands of the vampires' ancient enemies.</p>
+                  <p>What fate awaits Bronwyn during her Trial?</p>"); ?>
+            </div>
+         </div>
+         <div class="col-lg-6">
+              <div class="text-cont blog-cont">    
+                <div class="blog-title">
+                  <h2><span><img src="/Authors/assets/img/blog-before.png" alt=""></span>Blog Preview</h2>
+                  <div class="date">
+                      <span><img src="/Authors/assets/img/user.png" alt="user"><?php echo $this->MelisTag($this->idPage, "author-blog", 'textarea', "<p style='display: inline-block;'>Rose Ethridge</p>") ?></span>
+                      <span><img src="/Authors/assets/img/date.png" alt="date"><?php echo $this->MelisTag($this->idPage, "date-blog", 'textarea', "<p style='display: inline-block;'>November 1, 2018</p>") ?></span>
+                  </div>           
+                </div>
+                <div class="blog-inner">   
+                  <p><?php echo $this->MelisTag($this->idPage, "blog-content", 'textarea', "
+                     If Helen was the face that launched a thousand ships, Bram Stoker was the author who launched a thousand vampires. 
+                     Thanks to 1897?s Dracula, vampires earned a place in pop culture.") ?>
+                  </p>
+                  <a href="blog.html">Read More</a>
+                </div>
+              </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section id="author">
+   <div class="container">
+      <div class="wrapper">
+         <div class="row">
+         <div class="col-lg-6">
+            <div class="text-cont review-cont">
+               <h2><span><img src="/Authors/assets/img/review-before.png" alt=""></span>Featured Review</h2>
+               <?php echo $this->MelisTag($this->idPage, "featured-review-description", 'textarea', "
+                   <p>I got to the end of the book and didn't even realize it was the end. I flipped the page and was like where is the next chapter. I was so deep into the story and was really sad when it ended on such a cliffhanger.</p>
+                   <p>First off Bronwyn is a very troubled girl. After finding out that her best friend Corrine is gone (won't spoil it) she teams up with the one vampire I didn't see coming. Still undecided if this vampire is trustworthy. Time will tell. Bronwyn doesn't think highly of herself yet she has attracted the attention of the most gorgeous guy vampire Alex. And now she's on a very dangerous and troubling quest.</p>
+                   <p>I cannot wait to see what happens. This book was such a refreshing take on vampires. The author is fantastic at character building.</p>
+                   <h3>-Jennifer Ann Schlag</h3>"); ?>
+            </div>
+         </div>
+         <div class="col-lg-6">
+            <div class="text-cont">
+               <div class="img-cont">
+                  <?php echo $this->MelisTag($this->idPage, "author-img", 'media', '<img src="/Authors/assets/img/author.png" alt="Author Image" />'); ?>
+               </div>
+               <h2>About the Author</h2>
+               <?php echo $this->MelisTag($this->idPage, "author-description", 'textarea', "<p>Esse tempor consectetur, aliquip consectetur nulla labore aute. Ut laboris id eu consequat nulla aute ullamco ut laboris nisi aliqua. Dolor, fugiat commodo veniam aute dolor sunt ex pariatur quis aute dolore ea do quis dolor ea ad excepteur. Amet et commodo est deserunt, non aliqua quis ut incididunt proident. Dolor cillum, veniam, cupidatat do enim tempor qui laboris ad, reprehenderit excepteur.</p>") ?></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

@@ -1,0 +1,102 @@
+#main {
+    padding: 100px 0 0;
+    background: url('../img/main-bg.png');
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+#main .text-cont h2 {
+    font-size: 32px;
+    font-weight: 900;
+    font-family: "Muli", sans-serif;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+}
+
+#main .text-cont h2 span {
+    padding-right: 10px;
+}
+
+#main .text-cont h3 {
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+#main .text-cont p {
+    font-family: "Muli", sans-serif;
+    padding-right: 59px;
+    line-height: 30px;
+}
+
+#main .blog-cont .blog-title h2 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.date {
+    display: block;
+    margin-top: -25px;
+    margin-left: 97px;
+}
+
+.date span:first-child {
+    padding-right: 60px;
+}
+
+.blog-inner {
+    margin-top: 39px;
+}
+
+@media only screen and (max-width:1199px) {
+    #main .text-cont p {
+        padding-right: 0;
+    }
+}
+
+@media only screen and (max-width:991px) {
+    #main {
+        padding: 70px 0;
+    }
+    
+    #main .text-cont h2 {
+        text-align: center;
+    }
+
+    #main .blog-cont {
+        padding-top: 40px;
+    }
+
+    .blog-title {
+        text-align: center;
+    }
+
+    .date {
+        margin-left: 105px;
+    }
+
+    .date span:first-child {
+        padding-right: 10px;
+    }
+}
+
+@media only screen and (max-width:575px) {
+    #main .text-cont h2 span img {
+        width: 55px;
+        margin-top: -5px;
+    }
+
+    #main .text-cont h2 {
+        font-size: 7.2vw;
+    }
+
+    #main .text-cont h2 span {
+        padding-right: 5px;
+    }
+    .date {
+        margin-left: 0;
+        margin-top: 0;
+    }
+    #main {
+        padding: 50px 0;
+    }
+}

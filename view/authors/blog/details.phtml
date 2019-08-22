@@ -1,0 +1,27 @@
+<section id="banner-blog">
+   <div class="banner-bg">
+      <?php echo $this->MelisTag($this->idPage, "banner-img", 'media', '<img src="/Authors/assets/img/banner-bg.jpg" alt="Banner Image"/>'); ?>
+   </div>
+   <div class="container">
+      <div class="wrapper">
+         <div class="row">
+         <div class="col-lg-12 col-md-12 text-center">
+            <div class="blog-cont">
+               <h1>Blog</h1>
+            </div>
+         </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section id="blog">
+   <div class="container">
+      <div class="wrapper">
+         <div class="row" id="loop">
+            <?php echo $this->newsDetails; ?>
+            
+         </div>
+      </div>
+   </div>
+</section>

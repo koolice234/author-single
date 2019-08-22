@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:400,700,800,900&display=swap");
+
+#header {
+  background: #25c0a2;
+  height: 50px;
+  padding: 5px 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+nav.navbar.navbar-expand-md.navbar-light {
+  float: right;
+}
+
+#menu-home li {
+  padding: 0 25px;
+}
+
+#header a {
+  color: #fff;
+}
+
+#header .home-title {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: "Muli", sans-serif;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width:767px) {
+  #header {
+    height: 68px;
+  }
+
+  header .for-menu {
+    position: static;
+  }
+
+  header .menu-area {
+    position: static;
+    text-align: right;
+  }
+
+  header .menu-area .navbar {
+    display: inline-block;
+    padding: 13px 0!important;
+    position: static;
+  }
+
+  header .menu-area .navbar .navbar-toggler {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 3px;
+  }
+
+  header .menu-area .navbar #navbar, header .menu-area .navbar #navbarNavAltMarkup {
+    -webkit-box-shadow: none;
+    background: #25c0a2;
+    border-bottom: 1px solid #464646;
+    box-shadow: none;
+    left: 0;
+    padding: 0 15px;
+    position: absolute;
+    right: 0;
+    top: 60px;
+  }
+
+  header .menu-area .navbar #navbarNavAltMarkup ul, header .menu-area .navbar #navbar ul {
+    margin: 0 -15px;
+    text-align: left;
+  }
+
+  header .navbar-nav {
+    float: none!important;
+    margin: 7.5px 50px 7.5px -15px;
+  }
+
+  header .menu-area .navbar #navbarNavAltMarkup ul li, header .menu-area .navbar #navbar ul li {
+    border-top: 1px solid #464646;
+    display: block;
+    margin: 0;
+    overflow: auto;
+    padding: 0 10px;
+  }
+
+  header .menu-area .navbar #navbarNavAltMarkup ul li a, header .menu-area .navbar #navbar ul li a {
+    color: #fff;
+    display: block;
+    letter-spacing: 0;
+    line-height: 20px;
+    padding: 8px 10px;
+  }
+
+  header .menu-area .navbar .navbar-toggler {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 3px;
+}
+}
+
+@media only screen and (max-width:575px) {
+  #header {
+    height: 48px;
+  }
+
+  #header .menu-area .navbar .navbar-toggler {
+    padding: 0 2px;
+  }
+
+  #header .menu-area .navbar #navbarNavAltMarkup {
+    top: 48px;
+  }
+
+  #header .menu-area .navbar .navbar-toggler .navbar-toggler-icon {
+    height: 1em;
+    width: 1em;
+  }
+
+  header .menu-area .navbar .navbar-toggler {
+    padding: 0 2px;
+}
+
+header .menu-area .navbar {
+  display: inline-block;
+  padding: 7px 0!important;
+  position: static;
+}
+}

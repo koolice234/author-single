@@ -1,0 +1,130 @@
+<div class="form-cont">
+
+	<div class="alert alert-success" <?php echo ($this->success) ? : 'style="display: none"'?>>
+		<strong>Success!</strong> Your message has been sent to us.
+	</div>
+	<div class="alert alert-danger" <?php echo (!empty($this->errors)) ? : 'style="display: none"'?> >
+		<strong>Error!</strong> There was an error sending your message.
+		<ul>
+		<?php 
+			foreach ($this->errors as $key => $err) {
+				foreach ($err as $errKey => $errVal) {
+					if ($errKey != 'label') {
+						echo '<li>'. $errVal .'</li>';
+					}
+				}
+			}
+		?>
+		</ul>
+	</div>
+
+    <div role="form" class="wpcf7" id="wpcf7-f4-p9-o1" lang="en-US" dir="ltr">
+        <div class="screen-reader-response"></div>
+    	<?php 
+    		$form = $this->prospectsForm;
+			$form->prepare();
+			$form->setAttribute('class', 'wpcf7-form');
+			$form->setAttribute('novalidate', 'novalidate');
+    		echo $this->form()->openTag($form) 
+		?>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="item">
+                        <span class="wpcf7-form-control-wrap your-name">
+		                    <?php 
+		                    	$input = $form->get('pros_name');
+		                    	$input->setAttribute('placeholder', 'Name');
+		                    	$input->setAttribute('aria-required', 'true');
+		                    	$input->setAttribute('aria-invalid', 'Name');
+		                    	// print_r($input->getMessages());
+					    	    echo $this->formElement($input, ['class' => 'wpcf7-form-control wpcf7-text wpcf7-validates-as-required']);
+		                    ?>
+                    	</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="item">
+                        <span class="wpcf7-form-control-wrap your-email">
+                        	<?php 
+		                    	$input = $form->get('pros_email');
+		                    	$input->setAttribute('placeholder', 'Email');
+		                    	$input->setAttribute('aria-required', 'true');
+		                    	$input->setAttribute('aria-invalid', 'Name');
+					    	    echo $this->formElement($input, ['class' => 'wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email']); 
+				    	    ?>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <span class="wpcf7-form-control-wrap your-message">
+                	<?php 
+                    	$input = $form->get('pros_message');
+                    	$input->setAttribute('placeholder', 'Message');
+                    	$input->setAttribute('aria-required', true);
+                    	$input->setAttribute('aria-invalid', false );
+                    	$input->setAttribute('cols', 40);
+                    	$input->setAttribute('rows', 10);
+			    	    echo $this->formElement($input, ['class' => 'wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required']); 
+		    	    ?>
+                </span>
+            </div>
+            <div class="item check-submit clearfix">
+                <div class="btn-submit clearfix">
+                    <input type="submit" value="Submit" class="wpcf7-form-control wpcf7-submit btn-style" />
+                </div>
+            </div>
+            <div class="wpcf7-response-output wpcf7-display-none"></div>
+        <?php echo $this->form()->closeTag() ?>
+    </div>
+</div>
+
+<!--<script type="text/javascript">
+    $("form#contact-us").submit(function(e) {
+    
+        var formData = new FormData(this);
+
+        $.ajax({
+            type: 'POST',
+            url: '/Authors/ContactUs/submitContactUsForm',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+        }).done(function (data) {
+            $('#contactUsFormContainer').html(data.html).fadeIn();
+        }).fail(function () {
+            console.log('Something went wrong while submitting Contact form');
+        });
+
+        e.preventDefault();
+    });
+</script>-->
+
+<script type="text/javascript">
+  $("form#contact-us").submit(function(e) {
+    var pros_name = $('#pros_name').val();
+    var pros_email = $('#pros_email').val();
+    var pros_message = $('#pros_message').val();
+    var formData = {
+      'pros_name': pros_name,
+      'pros_email': pros_email,
+      'pros_message': pros_message
+    };
+    $.ajax({
+      type: 'POST',
+      url: 'Authors/ContactUs/submitContactUsForm',
+      data: formData,
+      //cache: false,
+      //contentType: false,
+      //processData: false,
+    }).done(function (data) {
+      $('#contactUsFormContainer').html(data.html).fadeIn();
+      //console.log('testContact response: ' + JSON.stringify(data['resp']));
+    }).fail(function () {
+      console.log('Something went wrong while submitting Contact form');
+    });
+
+    e.preventDefault();
+  });
+</script>

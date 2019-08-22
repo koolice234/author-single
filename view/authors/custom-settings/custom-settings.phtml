@@ -1,0 +1,177 @@
+<?php
+/*echo '<pre>';
+print_r($this->view_data);
+echo '</pre>';*/
+?>
+
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+</head>
+<body>
+ <form id="customSettings" action="" method="post">
+	<!--<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center"><h4>Mail Server Settings</h4></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="form-group">
+							<label for="mail_host">Host</label>
+							<input type="text" class="form-control" name="mail_host" value="">
+						</div>
+						<div class="form-group">
+							<label for="mail_port">Port</label>
+							<input type="text" class="form-control" name="mail_port" value="">
+						</div>
+						<div class="form-group">
+							<label for="mail_smtp_secure">SMTP Secure</label>
+							<input type="text" class="form-control"  name="mail_smtp_secure" value="">
+						</div>
+						<div class="form-group">
+							<label for="mail_smtp_auth">SMTP Auth</label>
+							<input type="text" class="form-control" name="mail_smtp_auth" value="">
+						</div>
+						<div class="form-group">
+							<label for="mail_username">Username</label>
+							<input type="text" class="form-control" name="mail_username" value="">
+						</div>
+						<div class="form-group">
+							<label for="mail_password">Password</label>
+							<input type="password" class="form-control" name="mail_password" value="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>-->
+	<div class="container" style="margin-top: 50px;">
+		<div class="row">
+			<div class="col-sm-6"><h4>Contact Form Email Settings</h4></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<!--<input type="hidden" id="site_id" name="site_id" value="<?php /*echo $this->view_data['siteId']; */?>">-->
+						<div class="form-group">
+							<label for="mail_recipient">Site Id</label>
+							<input type="text" class="form-control" id="site_id" name="site_id" required>
+						</div>
+						<div class="form-group">
+							<label for="mail_recipient">Recipients (separate with comma)</label>
+							<textarea class="form-control" id="mail_recipient" name="mail_recipient" required></textarea>
+						</div>
+						<div class="form-group">
+							<label for="mail_cc">Cc (separate with comma)</label>
+							<textarea class="form-control" id="mail_cc" name="mail_cc"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input type="submit" class="btn btn-primary" value="Save">
+	</div>
+</form>
+<div class="container">
+	<table id="customSettingsTbl" class="display">
+		<thead>
+		<tr>
+			<th>Site Id</th>
+			<th>Recipient</th>
+			<th>Cc</th>
+		</tr>
+		</thead>
+	</table>
+</div>
+
+<script
+		src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<!-- <script type="text/javascript" src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script> -->
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#customSettingsTbl').DataTable({
+      dom: 'lBfrtip',
+      processing: true,
+      serverSide: true,
+      ajax: {
+        'url': '/Authors/CustomSettings/getdata',
+        'dataSrc': '',
+        'data': function(d) {
+        }
+      },
+      columns: [
+        {'data': 'site_id',
+          'fnCreatedCell': function (nTd, sData, oData, iRow, iCol) {
+            $(nTd).html("<a href='/tickets/"+oData+"'>"+oData.site_id+"</a>");
+          }
+        },
+        {'data': 'recipient'},
+        {'data': 'cc'}
+      ]
+    });
+  })
+
+
+  $('#customSettings').submit(function(e) {
+    e.preventDefault();
+    let site_id = $('#site_id').val();
+	let recipient = $('#mail_recipient').val();
+    let cc = $('#mail_cc').val();
+
+    $.ajax({
+      url: '/Authors/CustomSettings/addSetting',
+      type: 'post',
+      data: {
+        'site_id': site_id,
+        'recipient': recipient,
+        'cc': cc
+      },
+      //dataType: 'json',
+      success: function(r) {
+          console.log('success');
+      }
+    });
+
+
+    /*$.ajax({
+      url: 'http://msettings.local/settings.php?action=save',
+      type: 'post',
+      data: this.serialize(),
+      //dataType: 'json',
+      success: function(r) {
+          console.log('success');
+      }
+    });*/
+
+    /* $.post('http://msettings.local/settings.php?action=save', $(this).serialize(), function(r) {
+     }).done(function(r) {
+       console.log('save success.');
+     });*/
+
+    /*var datastring = $(this).serializeArray();
+    $.ajax({
+        type: "POST",
+        url: "http://msettings.local/settings.php?action=save",
+        data: datastring,
+        dataType: "json",
+        success: function(data) {
+            console.log('save success.');
+        },
+        error: function() {
+            alert('error handling here');
+        }
+    });*/
+
+    /*var data = $('#customSettings').serialize();
+    $.post("http://msettings.local/settings.php?action=save", data);*/
+  });
+</script>
+</body>
+</html>

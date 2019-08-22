@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/Authors/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Authors/assets/css/header.css" />
+    <link rel="stylesheet" href="/Authors/assets/css/banner.css" />
+    <link rel="stylesheet" href="/Authors/assets/css/main.css" />
+    <link rel="stylesheet" href="/Authors/assets/css/author.css" />
+    <link rel="stylesheet" href="/Authors/assets/css/contact.css" />
+    <link rel="stylesheet" href="/Authors/assets/css/footer.css" />
+    <link rel="stylesheet" href="/Authors/assets/css/blog.css" />
+    <link rel="shortcut icon" href="/Authors/assets/img/favicon.ico" type="image/x-icon">
+    <title><?php echo $this->sitename; ?></title>
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="container">
+        <div class="wrapper">
+          <div class="row">
+              <div class="col-md-5 col-sm-9 col-9 for-logo align-self-center">
+                  <div class="logo-cont">
+                    <a class="home-title" href="index.html"><?php echo $this->sitename; ?></a>
+                  </div>
+              </div>
+              <div class="col-md-7 col-sm-3 col-3 for-menu align-self-md-center">
+                  <div class="menu-area">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div id="navbarNavAltMarkup" class="collapse navbar-collapse">
+                        <ul id="menu-home" class="navbar-nav">
+                          <li ><a href="/">HOME</a></li>
+                          <li ><a href="/id/<?= $this->blogpageid?>">BLOG</a></li>
+                          <li ><a href="#contact">CONTACT</a></li>
+                        </ul>
+                      </div>
+                    </nav>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Insert naviagation bar here -->
+
+      <!-- call index/index.phtml -->
+      <?php echo $this->content; ?>
+      <!-- End call -->
+        <section id="contact">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="row">
+                        <div class="col-lg-12">
+                        <div class="form-cont">
+                            <h2 class="text-center">Contact</h2>
+                            <form action="javascript:;">
+                                <input type="text" name="name" placeholder="*Name">
+                                <input type="email" name="email" placeholder="*Email">
+                                <textarea name="message" placeholder="*Message"></textarea>
+                                <input type="submit" value="submit">
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+      <div class="container">
+        <div class="wrapper">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <div class="text-cont">
+                <span> &#169; 2019</span>
+                <h3><?php echo $this->sitename; ?></h3>
+                <p>Website by <a href="https://gotopublish.com">GotoPublish</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/Authors/assets/js/jquery.min.js"></script>
+    <script src="/Authors/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

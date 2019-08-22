@@ -1,0 +1,46 @@
+<?php if (!empty($this->news)): ?>
+   
+      <div class="col-md-12">
+      
+         <div class="blog-detail-title">
+            <h2><?= $this->news['cnews_title']?></h2>
+         </div>
+         
+         <?php if(!empty($this->news['cnews_image1'])): ?>
+         <div class="feat-img">
+            <img src="<?= $this->news['cnews_image1']; ?>" alt="...">
+         </div>
+         <?php endif; ?>
+
+            <div class="text-cont">
+
+               <div class="date-author">
+                  <span class="name"><i class="fa fa-user" aria-hidden="true"></i>admin</span>
+                  <span class="date"><i class="fa fa-calendar-alt" aria-hidden="true"></i>August 8, 2017 </span>
+               </div>
+
+               <p><?= $this->news['cnews_paragraph1']?></p>
+
+               <?php if (!empty($this->news['cnews_paragraph2'])): ?>
+                  <p><?= $this->news['cnews_paragraph2']?></p>
+               <?php endif; ?>
+
+               <?php if (!empty($this->news['cnews_paragraph2'])): ?>
+                  <p><?= $this->news['cnews_paragraph2']?></p>
+               <?php endif; ?>
+
+               
+               <?php if (!empty($this->news['cnews_paragraph3'])): ?>
+                  <p><?= $this->news['cnews_paragraph3']?></p>
+               <?php endif; ?>
+
+               <?php else: ?>
+                  <div class="alert alert-warning" role="alert">
+                     No result
+                  </div>
+               <?php endif; ?>
+                           
+            </div>
+         </div>
+      
+   </div>

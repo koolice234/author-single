@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-US">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/Authors/assets/images/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' id='sage/themeFont-css' href='https://fonts.googleapis.com/css?family=Lora%3A400%2C400i%2C700%2C700i%7COpen+Sans%3A400%2C400i%2C600%2C600i%2C700%2C700i%7CPlayfair+Display%7CMuli%3A400%2C700&amp;ver=4.9.10' type='text/css' media='all'>
+    <link rel='stylesheet' id='sage/main.css-css' href='/Authors/assets/styles/main_2648a2d3.css' type='text/css' media='all' />
+    <link href="https://fonts.googleapis.com/css?family=Muli:200,400,600&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+</head>
+
+<body class="home page-template-default page page-id-9 do-etfw app-data index-data singular-data page-data page-9-data page-home-data front-page-data">
+    <main class="main-content-wrap">
+        <header id="header">
+            <div class="container">
+                <div class="for-menu">
+                    <div class="menu-area">
+                        <nav class="navbar navbar-expand-md navbar-light">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+						</button>
+                            <div id="navbarNavAltMarkup" class="collapse navbar-collapse">
+                                <ul id="menu-home" class="navbar-nav">
+                                    <li id="menu-item-27" class="home-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-9 current_page_item menu-item-27"><a href="<?php echo $this->MelisLink($this->homepageid, false); ?>">Home</a></li>
+                                    <li id="menu-item-28" class="book-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="<?php echo $this->MelisLink($this->homepageid, false); ?>#book">Book</a></li>
+                                    <li id="menu-item-29" class="author-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-29"><a href="<?php echo $this->MelisLink($this->homepageid, false); ?>#author">Author</a></li>
+                                    <li id="menu-item-31" class="contact-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-31"><a href="<?php echo $this->MelisLink($this->homepageid, false); ?>#contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+      <?php echo $this->content; ?>
+    <footer>
+        <div class="container">
+            <p class="copyright">
+                <span>&copy; </span> Elder Charles Adu-Gyamfi <i class="fas fa-circle"></i>
+                <em>Website by <a href="https://gotopublish.com/" target="_blank">Go2Publish LTD</a></em>
+            </p>
+        </div>
+    </footer>
+    <script>
+        jQuery(document).ready(function($) {
+            var $checkboxes;
+
+            function storekey() {
+                var keysVal = $checkboxes.map(function() {
+                    if (this.checked) return $(this).attr('data-key');
+                }).get().join(',');
+                $("input[name='fieldVal']").val(keysVal);
+            }
+            $(function() {
+                $checkboxes = $("input[class='listCheckbox']").change(storekey);
+            });
+        });
+    </script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var wpcf7 = {
+            "apiSettings": {
+                "root": "http:\/\/charles-gyamfi.local\/wp-json\/contact-form-7\/v1",
+                "namespace": "contact-form-7\/v1"
+            }
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='http://charles-gyamfi.local/content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.3'></script>
+    <script type='text/javascript' src='../www.google.com/recaptcha/api554b.js?render=6LeEgo0UAAAAAObqKp_GlS0WgrRTEBFa16Lwg35e&amp;ver=3.0'></script>
+    <script type='text/javascript' src='http://charles-gyamfi.local/content/plugins/easy-twitter-feed-widget/js/twitter-widgets.js?ver=1.0'></script>
+    <script type='text/javascript' src='/Authors/assets/scripts/main_2648a2d3.js'></script>
+    <script type='text/javascript' src='http://charles-gyamfi.local/core/wp-includes/js/wp-embed.min.js?ver=4.9.10'></script>
+</body>
+</html>
